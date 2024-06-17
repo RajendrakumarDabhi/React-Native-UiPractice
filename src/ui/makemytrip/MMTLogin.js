@@ -2,14 +2,17 @@ import { Dimensions, Image, SafeAreaView, ScrollView, StatusBar, StyleSheet, Tex
 import React, { useState } from 'react'
 import CustomInput from './Common'
 import { MMTGrey, MMTPrimaryColor } from './constants'
+import { useNavigation } from '@react-navigation/native'
+import { MMT_HOME } from '../../common/constants'
 
 const MMTLogin = () => {
   const [phoneEmail, setPhoneEmail] = useState("")
+  const navigation=useNavigation()
   function onChangeText(data) {
     setPhoneEmail(data)
   }
   const onContinue = () => {
-
+    navigation.navigate(MMT_HOME)
   }
 
   const height = Dimensions.get('window').height
